@@ -6,21 +6,30 @@
   <title>Homework 1 - Qiskit Programming</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <main class="page">
+
     <a class="back-link" href="index.html">← Back to Index</a>
 
     <h1 class="homework-title">Homework 1</h1>
     <p class="subtitle">Qiskit Programming</p>
 
+
+    <!-- Introduction -->
     <h2 class="section-title">1. Introduction</h2>
+
     <p>
       Qiskit is an open-source software development kit for creating,
       simulating, and executing quantum circuits.
     </p>
 
+
+    <!-- Qiskit Code -->
     <h2 class="section-title">2. Basic Quantum Circuit</h2>
+
     <div class="code-box">from qiskit import QuantumCircuit
+import matplotlib.pyplot as plt
 
 qc = QuantumCircuit(2, 2)
 
@@ -29,20 +38,60 @@ qc.cx(0, 1)
 
 qc.measure([0, 1], [0, 1])
 
-print(qc)</div>
+qc.draw(output="mpl")
+plt.show()</div>
 
-    <h2 class="section-title">3. Explanation</h2>
+
+    <!-- Circuit Diagram -->
+    <h2 class="section-title">3. Circuit Visualization</h2>
+
+    <div class="circuit-container">
+      <img
+        src="bell-circuit.png"
+        alt="Two-qubit Bell state quantum circuit"
+        class="circuit-diagram"
+      />
+    </div>
+
+
+    <!-- Explanation -->
+    <h2 class="section-title">4. Explanation</h2>
+
     <p>
-      The Hadamard gate places the first qubit into superposition. The CNOT
-      gate then creates a correlation between the two qubits. Finally, both
-      qubits are measured in the computational basis.
+      The circuit starts with two qubits in the state |00⟩.
+      A Hadamard (H) gate is first applied to qubit q<sub>0</sub>,
+      placing it into a superposition of |0⟩ and |1⟩.
     </p>
 
-    <h2 class="section-title">4. Conclusion</h2>
     <p>
-      This example demonstrates the basic Qiskit workflow for constructing
-      and measuring a simple two-qubit quantum circuit.
+      Next, a controlled-NOT (CNOT) gate is applied, where
+      q<sub>0</sub> acts as the control qubit and q<sub>1</sub>
+      acts as the target qubit. This operation creates an entangled
+      Bell state between the two qubits.
     </p>
+
+    <p class="equation">
+      |Φ<sup>+</sup>⟩ =
+      (|00⟩ + |11⟩) / √2
+    </p>
+
+    <p>
+      Finally, both qubits are measured in the computational basis.
+      When the circuit is executed repeatedly, the expected measurement
+      results are approximately 50% |00⟩ and 50% |11⟩.
+    </p>
+
+
+    <!-- Conclusion -->
+    <h2 class="section-title">5. Conclusion</h2>
+
+    <p>
+      This example demonstrates how Qiskit can be used to construct
+      a simple quantum circuit, generate quantum entanglement using
+      Hadamard and CNOT gates, measure the qubits, and visualize the
+      resulting circuit using Matplotlib.
+    </p>
+
   </main>
 </body>
 </html>
