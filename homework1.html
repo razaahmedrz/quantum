@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework 1 - Qiskit Programming</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <a class="back-link" href="index.html">← Back to Index</a>
+
+    <h1 class="homework-title">Homework 1</h1>
+    <p class="subtitle">Qiskit Programming</p>
+
+    <h2 class="section-title">1. Introduction</h2>
+    <p>
+      Qiskit is an open-source software development kit for creating,
+      simulating, and executing quantum circuits.
+    </p>
+
+    <h2 class="section-title">2. Basic Quantum Circuit</h2>
+    <div class="code-box">from qiskit import QuantumCircuit
+
+qc = QuantumCircuit(2, 2)
+
+qc.h(0)
+qc.cx(0, 1)
+
+qc.measure([0, 1], [0, 1])
+
+print(qc)</div>
+
+    <h2 class="section-title">3. Explanation</h2>
+    <p>
+      The Hadamard gate places the first qubit into superposition. The CNOT
+      gate then creates a correlation between the two qubits. Finally, both
+      qubits are measured in the computational basis.
+    </p>
+
+    <h2 class="section-title">4. Conclusion</h2>
+    <p>
+      This example demonstrates the basic Qiskit workflow for constructing
+      and measuring a simple two-qubit quantum circuit.
+    </p>
+  </main>
+</body>
+</html>
