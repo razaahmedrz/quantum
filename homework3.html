@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,26 @@
 
     .slides-fallback {
       margin: 12px 0 28px;
+    }
+
+    .code-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .code-button:hover {
+      background: #1d4ed8;
+    }
+
+    .code-section {
+      margin: 28px 0 40px;
     }
 
     @media (max-width: 768px) {
@@ -54,6 +75,22 @@
         open the report here
       </a>.
     </p>
+
+    <section class="code-section">
+      <h2 class="section-title">Source Code</h2>
+      <p>
+        View the Jupyter Notebook implementation of
+        Grover-based QUBO optimization.
+      </p>
+
+      <a
+        class="code-button"
+        href="https://github.com/razaahmedrz/quantum/blob/main/Grover_QUBO.ipynb"
+        target="_blank"
+        rel="noopener noreferrer">
+        View Code (.ipynb) ↗
+      </a>
+    </section>
   </main>
 </body>
 </html>
