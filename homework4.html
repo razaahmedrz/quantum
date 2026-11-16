@@ -9,16 +9,39 @@
 
   <style>
     .screenshot-container {
-      margin: 30px 0;
-      text-align: center;
-    }
-
-    .screenshot-container img {
       width: 100%;
-      height: auto;
+      margin: 30px 0;
+      overflow-x: auto;
+      overflow-y: hidden;
       border: 1px solid #ddd;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .screenshot-container a {
+      display: block;
+      width: 150%;
+    }
+
+    .screenshot-container img {
+      display: block;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      cursor: zoom-in;
+    }
+
+    .zoom-hint {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .screenshot-container a {
+        width: 200%;
+      }
     }
   </style>
 </head>
@@ -26,18 +49,32 @@
 <body>
   <main class="page">
 
-    <a class="back-link" href="index.html">← Back to Index</a>
+    <a class="back-link" href="index.html">
+      ← Back to Index
+    </a>
 
     <h1 class="homework-title">Homework 4</h1>
     <p class="subtitle">IBM Quantum Platform</p>
 
     <!-- IBM Quantum Platform Screenshot -->
     <div class="screenshot-container">
-      <img
-        src="ibm_quantum.png"
-        alt="IBM Quantum Platform Dashboard Screenshot"
-      />
+      <a
+        href="ibm_quantum.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Click to view full-size screenshot"
+      >
+        <img
+          src="ibm_quantum.png"
+          alt="IBM Quantum Platform Dashboard Screenshot"
+        />
+      </a>
     </div>
+
+    <p class="zoom-hint">
+      Scroll horizontally to explore the screenshot.
+      Click the image to view it at full size.
+    </p>
 
   </main>
 </body>
