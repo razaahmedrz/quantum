@@ -1,51 +1,191 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Homework 5 - QAOA on IBM Quantum Hardware</title>
+
   <link rel="stylesheet" href="styles.css" />
+
   <style>
-    .page { width: 100%; max-width: none; box-sizing: border-box; padding: 30px 22px; }
-    .hw5-header { text-align: center; margin: 28px auto 26px; }
-    .hw5-header h1 { margin-bottom: 10px; }
-    .hw5-subtitle { color: #526177; font-size: 1.1rem; margin: 0; }
-    .hw5-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 24px auto; }
-    .hw5-button { display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-      text-decoration: none; background: #1456aa; color: white; padding: 13px 20px;
-      border-radius: 9px; font-weight: 600; box-shadow: 0 3px 8px rgba(19,57,110,.12); }
-    .hw5-button:hover { background: #0d4186; }
-    .hw5-button.secondary { background: #eff4fb; color: #154c92; border: 1px solid #cfdbed; }
-    .hw5-button.secondary:hover { background: #e2edfb; }
-    .hw5-report { width: 100%; height: 84vh; min-height: 680px; border: 1px solid #d4dbe5;
-      border-radius: 12px; box-sizing: border-box; background: #f7f9fc; }
-    .hw5-fallback { text-align: center; color: #55677e; margin: 12px 0 25px; }
-    @media(max-width: 768px) {
-      .page { padding: 20px 12px; }
-      .hw5-report { height: 72vh; min-height: 480px; }
-      .hw5-button { width: 100%; box-sizing: border-box; }
+    .page {
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+      padding: 30px 22px;
+    }
+
+    /* Header */
+    .hw5-header {
+      text-align: center;
+      margin: 28px auto 26px;
+    }
+
+    .hw5-header h1 {
+      margin-bottom: 10px;
+    }
+
+    .hw5-subtitle {
+      color: #526177;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    /* Download buttons */
+    .hw5-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px auto 30px;
+    }
+
+    .hw5-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      text-decoration: none;
+      background: #1456aa;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 9px;
+      font-weight: 600;
+      box-shadow: 0 3px 8px rgba(19, 57, 110, 0.12);
+      transition: background 0.2s ease;
+    }
+
+    .hw5-button:hover {
+      background: #0d4186;
+    }
+
+    .hw5-button.secondary {
+      background: #eff4fb;
+      color: #154c92;
+      border: 1px solid #cfdbed;
+    }
+
+    .hw5-button.secondary:hover {
+      background: #e2edfb;
+    }
+
+    /* PDF Viewer */
+    .hw5-report {
+      display: block;
+      width: 100%;
+      max-width: 1000px;
+      height: 850px;
+      margin: 0 auto;
+      border: 1px solid #d4dbe5;
+      border-radius: 12px;
+      box-sizing: border-box;
+      background: #f7f9fc;
+    }
+
+    .hw5-fallback {
+      text-align: center;
+      color: #55677e;
+      margin: 12px 0 25px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .page {
+        padding: 20px 12px;
+      }
+
+      .hw5-report {
+        width: 100%;
+        height: 72vh;
+        min-height: 480px;
+      }
+
+      .hw5-button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .hw5-subtitle {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <main class="page">
-    <a class="back-link" href="index.html">← Back to Index</a>
+
+    <!-- Back to Homepage -->
+    <a class="back-link" href="index.html">
+      ← Back to Index
+    </a>
+
+    <!-- Homework Header -->
     <header class="hw5-header">
-      <h1 class="homework-title">Homework 5</h1>
-      <p class="hw5-subtitle">QAOA: Minimizing −x₀x₁x₂ on IBM Quantum Hardware</p>
+
+      <h1 class="homework-title">
+        Homework 5
+      </h1>
+
+      <p class="hw5-subtitle">
+        QAOA: Minimizing −x₀x₁x₂ on IBM Quantum Hardware
+      </p>
+
     </header>
+
+    <!-- Download Buttons -->
     <div class="hw5-actions">
-      <a class="hw5-button" href="Report%20-%20QAOA_IBM_Real_QPU.pdf" download>↓ Download Report (PDF)</a>
-      <a class="hw5-button secondary" href="QAOA_IBM_Real_QPU.ipynb" download>↓ Download Source Code (Jupyter Notebook)</a>
+
+      <a
+        class="hw5-button"
+        href="Report%20-%20QAOA_IBM_Real_QPU.pdf"
+        download
+      >
+        ↓ Download Report (PDF)
+      </a>
+
+      <a
+        class="hw5-button secondary"
+        href="QAOA_IBM_Real_QPU.ipynb"
+        download
+      >
+        ↓ Download Source Code (Jupyter Notebook)
+      </a>
+
     </div>
-    <section aria-label="Homework 5 report">
-      <object class="hw5-report" data="Report%20-%20QAOA_IBM_Real_QPU.pdf#toolbar=1&navpanes=0&view=FitH"
-              type="application/pdf" aria-label="QAOA Homework 5 PDF report">
-        <p class="hw5-fallback">PDF preview is not available in this browser.
-          <a href="Report%20-%20QAOA_IBM_Real_QPU.pdf">Open the report</a>.</p>
+
+    <!-- Embedded PDF Report -->
+    <section aria-label="Homework 5 Report">
+
+      <object
+        class="hw5-report"
+        data="Report%20-%20QAOA_IBM_Real_QPU.pdf#toolbar=1&navpanes=0&view=Fit"
+        type="application/pdf"
+        aria-label="QAOA Homework 5 PDF Report"
+      >
+
+        <p class="hw5-fallback">
+          PDF preview is not available in this browser.
+
+          <a href="Report%20-%20QAOA_IBM_Real_QPU.pdf">
+            Open the report
+          </a>.
+        </p>
+
       </object>
+
     </section>
-    <p class="hw5-fallback">If the preview does not load, use the PDF download button above.</p>
+
+    <!-- Fallback Link -->
+    <p class="hw5-fallback">
+      If the report does not display correctly,
+      use the PDF download button above.
+    </p>
+
   </main>
+
 </body>
 </html>
